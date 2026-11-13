@@ -1,0 +1,6 @@
+{
+  "name": "Carrom Hub",
+  "description": "The premier social network and real-time community platform for Carrom Pool players—share shots, join clubs, compete in tournaments, and chat live.",
+  "requestFramePermissions": ["microphone", "camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

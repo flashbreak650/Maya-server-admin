@@ -1,0 +1,110 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --bg-primary: #F6F8F7;
+    --bg-secondary: #FFFFFF;
+    --bg-card: #FFFFFF;
+    --bg-inset: #EFF3F1;
+    --accent-primary: #00A86B;
+    --accent-emerald: #008F5B;
+    --text-primary: #0F172A;
+    --text-secondary: #475569;
+    --border-emerald: rgba(15, 23, 42, 0.09);
+    --card-shadow: 0 4px 18px -6px rgba(15, 23, 42, 0.08);
+    --glass-bg: rgba(255, 255, 255, 0.88);
+    --scroll-track: #EEF2F0;
+    --scroll-thumb: rgba(0, 168, 107, 0.28);
+  }
+
+  .dark {
+    --bg-primary: #080D0B;
+    --bg-secondary: #101A15;
+    --bg-card: #14221B;
+    --bg-inset: #080D0B;
+    --accent-primary: #00D68F;
+    --accent-emerald: #00B87A;
+    --text-primary: #FFFFFF;
+    --text-secondary: #A5B5AC;
+    --border-emerald: rgba(0, 214, 143, 0.15);
+    --card-shadow: 0 12px 30px -12px rgba(0, 0, 0, 0.55);
+    --glass-bg: rgba(16, 26, 21, 0.8);
+    --scroll-track: #080D0B;
+    --scroll-thumb: rgba(0, 214, 143, 0.22);
+  }
+
+  html,
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Plus Jakarta Sans', 'Noto Sans Bengali', -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow-x: hidden;
+    transition: background-color 180ms ease, color 180ms ease;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Outfit', 'Noto Sans Bengali', sans-serif;
+    text-wrap: balance;
+  }
+
+  .font-mono-tabular {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom sleek scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scroll-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scroll-thumb);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 214, 143, 0.45);
+}
+
+/* Subtle glassmorphism and adaptive surface utilities */
+.glass-surface {
+  background: var(--glass-bg);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--border-emerald);
+  box-shadow: var(--card-shadow);
+}
+
+.card-surface {
+  background: var(--bg-card);
+  border: 1px solid var(--border-emerald);
+  box-shadow: var(--card-shadow);
+}
+
+.inset-surface {
+  background: var(--bg-inset);
+  border: 1px solid var(--border-emerald);
+}
+
+.emerald-glow {
+  box-shadow: 0 0 24px -6px rgba(0, 214, 143, 0.35);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
